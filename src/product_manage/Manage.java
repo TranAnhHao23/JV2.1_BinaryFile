@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Manage implements Serializable {
-    ArrayList<Product> products = new ArrayList<>();
+    ArrayList<Product> products = readProduct("src/product_manage/save.csv");
     Scanner sc = new Scanner(System.in);
 
     public Manage() {
@@ -57,11 +57,8 @@ public class Manage implements Serializable {
     }
 
     public void writeProduct(ArrayList<Product> productsNew, String pathName) {
-        ArrayList<Product> productsExist = readProduct(pathName);
+//        ArrayList<Product> productsExist = readProduct(pathName);
 //        productsExist.add(new Product("6","6",6));
-        if(productsNew ==null) {
-            productsNew.addAll(productsExist);
-        }
         try {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(pathName));
             objectOutputStream.writeObject(productsNew);

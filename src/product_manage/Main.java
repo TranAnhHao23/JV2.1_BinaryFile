@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Manage manage = new Manage();
+
         final String PATH_NAME = "src/product_manage/save.csv";
         int choice;
         do {
